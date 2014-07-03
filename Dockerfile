@@ -11,3 +11,5 @@ RUN apt-get -yq install netcat socat
 RUN apt-get -yq install colordiff
 RUN apt-get -yq install traceroute
 RUN apt-get -yq install tcptraceroute
+RUN apt-get -yq install python-pip
+RUN pip install httpie
