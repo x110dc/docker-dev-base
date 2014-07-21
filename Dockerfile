@@ -13,4 +13,5 @@ RUN apt-get -yq install traceroute
 RUN apt-get -yq install tcptraceroute
 RUN apt-get -yq install git
 RUN apt-get -yq install python-pip
+RUN apt-get -yq install unzip
 RUN pip install httpie
