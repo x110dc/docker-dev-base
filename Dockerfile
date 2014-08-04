@@ -15,6 +15,6 @@ RUN apt-get -yq install git
 RUN apt-get -yq install unzip
 RUN apt-get -yq install lsof
 RUN apt-get -yq install psmisc
-
+RUN apt-get -yq install pv
 RUN apt-get -yq install python-pip
 RUN pip install httpie
