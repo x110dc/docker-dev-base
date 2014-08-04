@@ -18,3 +18,5 @@ RUN apt-get -yq install psmisc
 RUN apt-get -yq install pv
 RUN apt-get -yq install python-pip
 RUN pip install httpie
+RUN apt-get -yq install mysql-client
+RUN apt-get -yq install postgresql-client
