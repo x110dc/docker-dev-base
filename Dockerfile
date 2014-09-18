@@ -28,3 +28,6 @@ RUN apt-get -yq install postgresql-client
 RUN apt-get -yq install lxc-docker
 RUN apt-get -yq install zsh
 RUN pip install postdoc
+RUN echo "set editing-mode vi" >> /etc/inputrc
+
+ENTRYPOINT ["zsh"]
