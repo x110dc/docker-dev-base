@@ -1,4 +1,4 @@
 all:
-	docker build -t x110dc/dev-base .
+	docker build -t dev .
 run:
-	docker run -i -t x110dc/dev-base bash
+	docker run --interactive --tty --rm --hostname=dev dev
