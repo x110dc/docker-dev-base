@@ -26,3 +26,4 @@ RUN pip install httpie
 RUN apt-get -yq install mysql-client
 RUN apt-get -yq install postgresql-client
 RUN apt-get -yq install lxc-docker
+RUN apt-get -yq install zsh
