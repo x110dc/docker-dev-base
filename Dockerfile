@@ -29,5 +29,6 @@ RUN apt-get -yq install lxc-docker
 RUN apt-get -yq install zsh
 RUN pip install postdoc
 RUN echo "set editing-mode vi" >> /etc/inputrc
+RUN echo "set -o vi" >> /etc/zsh/zshrc
 
 ENTRYPOINT ["zsh"]
