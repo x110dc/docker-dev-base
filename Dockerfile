@@ -31,4 +31,8 @@ RUN pip install postdoc
 RUN echo "set editing-mode vi" >> /etc/inputrc
 RUN echo "set -o vi" >> /etc/zsh/zshrc
 
-ENTRYPOINT ["zsh"]
+# I get '/usr/bin/zsh: can't open input file: <blah>' if I try to use this
+# non-interactively. There was a problem with with bash that seems similar
+# where CMD was being polluted by the parent image.  But that was fixed in
+# 1.2.0 and this works okay with bash.  Why would it break with zsh?
+# ENTRYPOINT ["zsh"]
