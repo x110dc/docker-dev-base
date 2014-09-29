@@ -31,6 +31,15 @@ RUN pip install postdoc
 RUN echo "set editing-mode vi" >> /etc/inputrc
 RUN echo "set -o vi" >> /etc/zsh/zshrc
 
+# this doesn't yet work in containers.  Watch: # https://github.com/draios/sysdig/issues/152
+# http://www.sysdig.org/wiki/how-to-install-sysdig-for-linux/
+#RUN curl -s https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public | apt-key add -
+#RUN curl -s -o /etc/apt/sources.list.d/draios.list http://download.draios.com/stable/deb/draios.list
+#RUN apt-get update
+#RUN apt-get -y install sysdig
+
+RUN apt-get -yq install dc
+
 # I get '/usr/bin/zsh: can't open input file: <blah>' if I try to use this
 # non-interactively. There was a problem with with bash that seems similar
 # where CMD was being polluted by the parent image.  But that was fixed in
