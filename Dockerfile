@@ -39,6 +39,7 @@ RUN echo "set -o vi" >> /etc/zsh/zshrc
 #RUN apt-get -y install sysdig
 
 RUN apt-get -yq install dc
+RUN apt-get -yq install awscli
 
 # I get '/usr/bin/zsh: can't open input file: <blah>' if I try to use this
 # non-interactively. There was a problem with with bash that seems similar
