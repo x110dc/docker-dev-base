@@ -18,7 +18,7 @@ RUN apt-get -yq install silversearcher-ag \
   graphviz \
   zsh
 
-RUN pip install postdoc httpie
+RUN pip install postdoc httpie httpbin gunicorn
 RUN echo "set editing-mode vi" >> /etc/inputrc
 RUN echo "set -o vi" >> /etc/zsh/zshrc
 
