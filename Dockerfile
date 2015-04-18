@@ -15,10 +15,11 @@ RUN apt-get -yq install silversearcher-ag \
   netcat socat colordiff traceroute \
   tcptraceroute python-dev git unzip lsof psmisc pv \
   python-pip mysql-client postgresql-client awscli dc lxc-docker \
-  graphviz \
+  python-yaml graphviz python3-pip golang groff \
   zsh
-
-RUN pip install postdoc httpie httpbin gunicorn
+# upgrade pip:
+RUN pip install -U pip
+RUN pip install postdoc httpie httpbin gunicorn csvkit pyyaml jinja2
 RUN echo "set editing-mode vi" >> /etc/inputrc
 RUN echo "set -o vi" >> /etc/zsh/zshrc
 
@@ -34,3 +35,16 @@ RUN echo "set -o vi" >> /etc/zsh/zshrc
 # where CMD was being polluted by the parent image.  But that was fixed in
 # 1.2.0 and this works okay with bash.  Why would it break with zsh?
 # ENTRYPOINT ["zsh"]
+
+# install ECS preview version of awscli
+RUN wget https://s3.amazonaws.com/ecs-preview-docs/amazon-ecs-cli-preview.tar.gz && \
+  tar -zxvf amazon-ecs-cli-preview.tar.gz && \
+  cd amazon-ecs-cli-preview && \
+  unzip ecs-cli.zip && \
+  cd awscli-bundle && \
+  python install && \
+  cd / && \
+  rm -rf amazon-ecs-cli-preview && rm amazon-ecs-cli-preview.tar.gz
+RUN echo "alias aws=/root/.local/lib/aws/bin/aws" >> /etc/zsh/zshrc
+RUN echo "alias aws=/root/.local/lib/aws/bin/aws" >> /etc/bash.bashrc
+#ENV PATH /root/.local/lib/aws/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin

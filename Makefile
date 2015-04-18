@@ -1,4 +1,2 @@
-all:
-	docker build -t dev .
-run:
-	docker run --interactive --tty --rm --hostname=dev dev
+build:
+	docker build --no-cache --tag x110dc/dev .
