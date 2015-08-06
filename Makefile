@@ -1,2 +1,2 @@
 build:
-	docker build --no-cache --tag x110dc/dev .
+	docker build --tag x110dc/dev .
