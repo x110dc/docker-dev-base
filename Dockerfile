@@ -15,11 +15,11 @@ RUN apt-get -yq install silversearcher-ag \
   netcat socat colordiff traceroute \
   tcptraceroute python-dev git unzip lsof psmisc pv \
   python-pip mysql-client postgresql-client awscli dc lxc-docker \
-  python-yaml graphviz python3-pip golang groff \
+  python-yaml graphviz python3-pip golang groff libpq-dev \
   zsh
 # upgrade pip:
 RUN pip install -U pip
-RUN pip install postdoc httpie httpbin gunicorn csvkit pyyaml jinja2
+RUN pip install postdoc httpie httpbin gunicorn csvkit pyyaml jinja2 pandas psycopg2 ipdb "ipython[notebook]"
 RUN echo "set editing-mode vi" >> /etc/inputrc
 RUN echo "set -o vi" >> /etc/zsh/zshrc
 
