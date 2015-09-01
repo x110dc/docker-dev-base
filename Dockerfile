@@ -16,7 +16,7 @@ RUN apt-get -yq install silversearcher-ag \
   tcptraceroute python-dev git unzip lsof psmisc pv \
   python-pip mysql-client postgresql-client awscli dc lxc-docker \
   python-yaml graphviz python3-pip golang groff libpq-dev \
-  zsh
+  zsh apache2-utils
 # upgrade pip:
 RUN pip install -U pip
 RUN pip install tutum postdoc httpie httpbin gunicorn csvkit pyyaml jinja2 pandas psycopg2 ipdb "ipython[notebook]"
