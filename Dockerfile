@@ -19,7 +19,7 @@ RUN apt-get -yq install silversearcher-ag \
   zsh apache2-utils
 # upgrade pip:
 RUN pip install -U pip
-RUN pip install tutum postdoc httpie httpbin gunicorn csvkit pyyaml jinja2 pandas psycopg2 ipdb "ipython[notebook]"
+RUN pip install aws-shell postdoc httpie httpbin gunicorn csvkit pyyaml jinja2 pandas psycopg2 ipdb "ipython[notebook]"
 RUN echo "set editing-mode vi" >> /etc/inputrc
 RUN echo "set -o vi" >> /etc/zsh/zshrc
 
